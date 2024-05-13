@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalBagrot">
+
+    <TextView
+        android:id="@+id/tVSummary"
+        android:layout_width="300dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="40dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="375dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="35dp" />
+
+    <Button
+        android:id="@+id/prevBtn3"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="secScreen"
+        android:text="Perv"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/tVAvgs"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tVAvgs"
+        android:layout_width="300dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tVSummary"
+        tools:layout_editor_absoluteX="55dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

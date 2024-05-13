@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toast toast;
     Button nextBtn;
     EditText eTname, eTlanguage, eTliterature, eThistory, eTnationality, eTbible;
 
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     {
         if(input > 100)
         {
-            toast = Toast.makeText(getApplicationContext(),"grade is a number between 1-100. try again",Toast.LENGTH_SHORT);
+            //Toast.makeText(getApplicationContext(),"grade is a number between 1-100. try again",Toast.LENGTH_SHORT);
             return false;
         }
         return true;
@@ -56,16 +55,16 @@ public class MainActivity extends AppCompatActivity {
 
         if(checkInputGrade(languageG) && checkInputGrade(literatureG) && checkInputGrade(historyG) && checkInputGrade(nationalityG) && checkInputGrade(bibleG))
         {
-            toast = Toast.makeText(getApplicationContext(),"Yes",Toast.LENGTH_SHORT);
+            Toast.makeText(this,"Yes",Toast.LENGTH_SHORT).show();
             // next screen
-            Intent si = new Intent(this,MogbarSubjects.class);
-            si.putExtra("nameG",nameG);
-            si.putExtra("languageG",languageG);
-            si.putExtra("literatureG",literatureG);
-            si.putExtra("historyG",historyG);
-            si.putExtra("nationalityG",nationalityG);
-            si.putExtra("bibleG",bibleG);
-            startActivity(si);
+            Intent si1 = new Intent(this,MainActivity2.class);
+            si1.putExtra("nameG",nameG);
+            si1.putExtra("languageG",languageG);
+            si1.putExtra("literatureG",literatureG);
+            si1.putExtra("historyG",historyG);
+            si1.putExtra("nationalityG",nationalityG);
+            si1.putExtra("bibleG",bibleG);
+            startActivity(si1);
 
         }
     }
