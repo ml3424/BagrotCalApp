@@ -4,14 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class MainActivity2 extends AppCompatActivity {
+public class Mogbar extends AppCompatActivity {
     Button nextBtn2;
     EditText eTmath, eTenglish, eTmathU, eTenglishU, eTMogbar1, eTMogbar2, eTMogbar3;
     RadioButton rB51, rB55, rB555;
@@ -28,7 +27,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_mogbar);
 
         Intent gi = getIntent();
         name = gi.getStringExtra("name");

@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             if(notEmpty) {
                 Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
                 // next screen
-                Intent si1 = new Intent(this, MainActivity2.class);
+                Intent si1 = new Intent(this, Mogbar.class);
                 si1.putExtra("name", name);
                 si1.putExtra("languageG", languageG);
                 si1.putExtra("literatureG", literatureG);
