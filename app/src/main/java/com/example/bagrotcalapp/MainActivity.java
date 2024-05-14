@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Button nextBtn;
     EditText eTname, eTlanguage, eTliterature, eThistory, eTnationality, eTbible;
 
-    String nameG;
+    String name;
     int languageG, literatureG, historyG, nationalityG, bibleG;
 
 
@@ -44,28 +44,53 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public boolean checkEmpty(String input)
+    {
+        if(input.isEmpty())
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void nextScreen(View view) {
         // get valid grades from the editexts and the user name.
-        nameG = eTname.getText().toString();
-        languageG = Integer.valueOf(eTlanguage.getText().toString());
-        literatureG = Integer.valueOf(eTliterature.getText().toString());
-        historyG = Integer.valueOf(eThistory.getText().toString());
-        nationalityG = Integer.valueOf(eTnationality.getText().toString());
-        bibleG = Integer.valueOf(eTbible.getText().toString());
+        boolean notEmpty = true;
+
+        name = eTname.getText().toString();
+        if(checkEmpty(eTlanguage.getText().toString()) || checkEmpty(eTliterature.getText().toString()) || checkEmpty(eThistory.getText().toString()) || checkEmpty(eTnationality.getText().toString()) || checkEmpty(eTbible.getText().toString()))
+        {
+            notEmpty = false;
+            Toast.makeText(getApplicationContext(),"One or more is empty. try again",Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            languageG = Integer.valueOf(eTlanguage.getText().toString());
+            literatureG = Integer.valueOf(eTliterature.getText().toString());
+            historyG = Integer.valueOf(eThistory.getText().toString());
+            nationalityG = Integer.valueOf(eTnationality.getText().toString());
+            bibleG = Integer.valueOf(eTbible.getText().toString());
+        }
 
         if(checkInputGrade(languageG) && checkInputGrade(literatureG) && checkInputGrade(historyG) && checkInputGrade(nationalityG) && checkInputGrade(bibleG))
         {
-            Toast.makeText(this,"Yes",Toast.LENGTH_SHORT).show();
-            // next screen
-            Intent si1 = new Intent(this,MainActivity2.class);
-            si1.putExtra("nameG",nameG);
-            si1.putExtra("languageG",languageG);
-            si1.putExtra("literatureG",literatureG);
-            si1.putExtra("historyG",historyG);
-            si1.putExtra("nationalityG",nationalityG);
-            si1.putExtra("bibleG",bibleG);
-            startActivity(si1);
+            if(notEmpty) {
+                Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
+                // next screen
+                Intent si1 = new Intent(this, MainActivity2.class);
+                si1.putExtra("name", name);
+                si1.putExtra("languageG", languageG);
+                si1.putExtra("literatureG", literatureG);
+                si1.putExtra("historyG", historyG);
+                si1.putExtra("nationalityG", nationalityG);
+                si1.putExtra("bibleG", bibleG);
+                startActivity(si1);
+            }
 
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"grade is a number between 0-100. try again",Toast.LENGTH_SHORT).show();
         }
     }
 }

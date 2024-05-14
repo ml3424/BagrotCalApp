@@ -49,9 +49,12 @@
         android:id="@+id/tVAvgs"
         android:layout_width="300dp"
         android:layout_height="235dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="56dp"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/tVSummary"
-        tools:layout_editor_absoluteX="55dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVSummary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
