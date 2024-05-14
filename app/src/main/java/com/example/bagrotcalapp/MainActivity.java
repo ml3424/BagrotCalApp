@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         if(checkInputGrade(languageG) && checkInputGrade(literatureG) && checkInputGrade(historyG) && checkInputGrade(nationalityG) && checkInputGrade(bibleG))
         {
             if(notEmpty) {
-                Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
                 // next screen
                 Intent si1 = new Intent(this, Mogbar.class);
                 si1.putExtra("name", name);

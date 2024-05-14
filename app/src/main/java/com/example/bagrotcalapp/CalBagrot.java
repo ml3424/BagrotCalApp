@@ -36,7 +36,7 @@ public class CalBagrot extends AppCompatActivity {
 
     }
 
-    public String summaryText()
+    public void extra()
     {
         name = gi3.getStringExtra("name");
         languageG = gi3.getIntExtra("languageG",222);
@@ -52,16 +52,19 @@ public class CalBagrot extends AppCompatActivity {
 
         mogbar1 = gi3.getIntExtra("mogbar1", 222);
         mogbar2 = gi3.getIntExtra("mogbar2", 222);
+    }
 
-        summary = "Here are your grades"  + name + ":\n";
+    public String summaryText()
+    {
+        extra();
+        summary = "Here are your grades "  + name + ":\n";
         summary += "language 2 units: " + languageG + "\n";
         summary += "literature 2 units: " + literatureG + "\n";
         summary += "history 2 units: " + historyG + "\n";
         summary += "nationality 2 units: " + nationalityG + "\n";
         summary += "bible 2 units: " + bibleG + "\n";
-        summary += "math" + mathU +" units: " + mathG + "\n";
-        summary += "english" + englishU +" units: " + englishG + "\n";
-        summary += "english" + englishU +" units: " + englishG + "\n";
+        summary += "math " + mathU +" units: " + mathG + "\n";
+        summary += "english " + englishU +" units: " + englishG + "\n";
         summary += "mogbar 5 units: " + mogbar1 + "\n";
 
         option = gi3.getIntExtra("option",222);
@@ -106,7 +109,7 @@ public class CalBagrot extends AppCompatActivity {
             avgs += "\nNormal: " + (sumAllWOutMogbar()/unitsN);
             mogbar2 = (mogbar2+BONUS5U) * 5;
             mogbar3 = (mogbar3+BONUS5U) * 5;
-            avgs += "With Mogbar 1: " + ((sumAllWOutMogbar()+ mogbar1)/(unitsN+5));
+            avgs += "\nWith Mogbar 1: " + ((sumAllWOutMogbar()+ mogbar1)/(unitsN+5));
             avgs += "\nWith Mogbar 2: " + ((sumAllWOutMogbar()+ mogbar2)/(unitsN+5));
             avgs += "\nWith Mogbar 3: " + ((sumAllWOutMogbar()+ mogbar3)/(unitsN+5));
             avgs += "\nWith Mogbar 1+2: " + ((sumAllWOutMogbar()+ mogbar1 + mogbar2)/(unitsN+5+5));
@@ -120,8 +123,8 @@ public class CalBagrot extends AppCompatActivity {
 
     public int sumAllWOutMogbar()
     {
-        int sum = mathG*mathU + englishG*englishU;
-        sum = languageG*2 + literatureG*2 + historyG*2 + nationalityG*2 + bibleG*2;
+        int sum = 0;
+        sum += languageG*2 + literatureG*2 + historyG*2 + nationalityG*2 + bibleG*2;
         if(mathU == 4)
         {
             sum += (mathG+BONUS4U)*mathU;
