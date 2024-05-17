@@ -91,7 +91,7 @@ public class Mogbar extends AppCompatActivity {
 
     public boolean checkInputGrade(int input, int max, int min)
     {
-        if(input >= max && input <= min)
+        if(input > max && input < min)
         {
             return false;
         }
