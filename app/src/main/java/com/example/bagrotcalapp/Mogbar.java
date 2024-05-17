@@ -142,7 +142,7 @@ public class Mogbar extends AppCompatActivity {
 
 
         if(checkInputGrade(mathG, MAX_G, 0) && checkInputGrade(englishG, MAX_G, 0) && checkInputGrade(mogbar1, MAX_G, 0) && checkInputGrade(mogbar2, MAX_G, 0) && checkInputGrade(mogbar3, MAX_G, 0)) {
-            if(checkInputGrade(mathG, MAX_UNITS, MIN_UNITS) && checkInputGrade(englishG, MAX_UNITS, MIN_UNITS)) {
+            if(checkInputGrade(mathU, MAX_UNITS, MIN_UNITS) && checkInputGrade(englishU, MAX_UNITS, MIN_UNITS)) {
                 if(notEmpty) {
                     if(rB51.isChecked() || rB55.isChecked() || rB555.isChecked()) {
                         // send data to the third screen
